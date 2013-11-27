@@ -4,6 +4,7 @@
 
 include 'connect.php';
 
+
 function getInfo(){
 	$query = "SELECT * FROM tbmessages";
 	$result = mysql_query($query);
@@ -42,7 +43,7 @@ $get = getInfo();
 			<td> <?php echo $getInfos['date_posted'];?> </td>
 			<td> <?php echo $getInfos['is_approved'];?> </td>
 			
-		<?php
+	<?php
 			if($getInfos['is_approved'] == "N"){
 		?>
 		<td><a href="Approved.php?id=<?=$getInfos['id']?>">Approved</a><b></td>
@@ -58,7 +59,15 @@ $get = getInfo();
  		</tr>
 	<?php endforeach;?>
 
+	<form method = "POST" action = "Create.php">
+	<table><br><br>
+		<tr>
+			<td><a href="Create.php"><input type="submit" value="POST MESSAGES"></a></td>
+			<td>
+		</tr>
 	</table>
+
 </center>
 </body>
 </html>
+
