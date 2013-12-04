@@ -4,7 +4,7 @@
 	$get = new MessageDAO();
 	$id = $_GET['id'];
 
-	$is_approved = $get->view_info($id);
+	$is_approved = $get->getMessage($id);
 	if($is_approved['is_approved'] == 'N'){
 		$get->approveMessage($id);
 		 header("location:view_all.php");
