@@ -16,7 +16,7 @@ class MessageDAO {
         $result = mysql_query($query);
     }
 
-    public static function view_info($id) {
+    public static function getMessage($id) {
         // Execute SQL to fetch message based on ID
         $query = "SELECT is_approved FROM tbmessages WHERE id = '$id' ";
         $result = mysql_query($query);
